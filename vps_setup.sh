@@ -1,3 +1,4 @@
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 mkdir ~/projects
 cd ~/projects
 git clone https://github.com/shinezyy/my_vim_conf.git
