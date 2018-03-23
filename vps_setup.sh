@@ -1,4 +1,4 @@
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chmod 600 ~/.ssh/authorized_keys
 mkdir ~/projects
 cd ~/projects
 git clone https://github.com/shinezyy/my_vim_conf.git
@@ -15,3 +15,4 @@ ln -s $vimConf/vim .vim
 ln -s $vimConf/vimrc_py .vimrc
 cd $vimConf
 git submodule update --init vim/bundle/Vundle.vim
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
