@@ -2,7 +2,7 @@ apt update
 apt install zsh vim tmux curl wget git python3 tree htop putty-tools sudo
 useradd zyy
 mkdir /home/zyy/
-cp ./vps_setup.sh /home/zyy/
+cp ./*.sh /home/zyy/
 cp -r /root/.ssh /home/zyy
 chown -R zyy:zyy /home/zyy
 usermod -aG sudo zyy
