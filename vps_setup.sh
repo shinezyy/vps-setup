@@ -1,8 +1,14 @@
+# create dirs
+mkdir -p ~/.ssh/
+touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
-mkdir ~/projects
+mkdir -p ~/projects
 cd ~/projects
+
+# clone
 git clone https://github.com/shinezyy/my_vim_conf.git
-git clone https://github.com/91yun/91yuntest.git
+
+# vim
 export vimConf=$HOME/projects/my_vim_conf
 cd $vimConf
 git submodule update --init tmux
@@ -13,7 +19,16 @@ mv ~/.vim ~/.vim_bak
 mv ~/.vimrc ~/.vimrc_bak
 cd ~
 ln -s $vimConf/vim .vim
-ln -s $vimConf/vimrc_py .vimrc
+ln -s $vimConf/vimrc_bare .vimrc
 cd $vimConf
 git submodule update --init vim/bundle/Vundle.vim
+git submodule update --init vim/bundle/badwolf
+
+# oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# pip3
+cd /tmp
+wget https://bootstrap.pypa.io/get-pip.py
+sudo -H python3 get-pip.py
+
