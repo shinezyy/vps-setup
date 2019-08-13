@@ -24,11 +24,10 @@ cd $vimConf
 git submodule update --init vim/bundle/Vundle.vim
 git submodule update --init vim/bundle/badwolf
 
-# oh my zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 # pip3
 cd /tmp
 wget https://bootstrap.pypa.io/get-pip.py
 sudo -H python3 get-pip.py
 
+# oh my zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
