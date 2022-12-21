@@ -5,10 +5,8 @@ chmod 600 ~/.ssh/authorized_keys
 mkdir -p ~/projects
 cd ~/projects
 
-# clone
+# VIM (NOT USED)
 git clone https://github.com/shinezyy/my_vim_conf.git
-
-# vim
 export vimConf=$HOME/projects/my_vim_conf
 cd $vimConf
 git submodule update --init tmux
