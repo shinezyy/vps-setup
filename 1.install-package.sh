@@ -6,6 +6,7 @@ sudo apt install landscape-common -y
 sudo apt install python3-distutils -y
 sudo apt install libsodium23 -y
 sudo apt install libsodium18 -y
+sudo apt install proxychains -y
 
 sudo locale-gen zh_CN.UTF-8
 sudo update-locale
