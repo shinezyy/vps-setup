@@ -1,5 +1,5 @@
 sudo apt update
-sudo apt install zsh vim tmux curl wget git python3 tree htop putty-tools sudo \
+sudo apt install zsh vim tmux curl wget git python3 tree htop putty-tools p7zip-full sudo \
     nethogs ufw unzip net-tools jnettop -y
 
 sudo apt install landscape-common -y
