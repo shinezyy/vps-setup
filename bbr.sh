@@ -1,6 +1,10 @@
+default_version=22.04
+version="${1:-$default_version}"
+echo $version
+
 uname -r
 cat /etc/lsb-release
-sudo apt install --install-recommends linux-generic-hwe-22.04
+sudo apt install --install-recommends linux-generic-hwe-${version}
 sleep 3
 sysctl net.ipv4.tcp_available_congestion_control
 sleep 3
