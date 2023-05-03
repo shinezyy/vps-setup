@@ -24,10 +24,22 @@ cd $vimConf
 git submodule update --init vim/bundle/Vundle.vim
 git submodule update --init vim/bundle/badwolf
 
+mkdir -p ~/.config/nvim  # create config dir for neovim
+cd ~/.config/nvim
+ln -s $vimConf/neovim/neovimrc ./init.vim
+cd ~
+mv ~/.vim ~/.vim_bak
+ln -s $vimConf/vim .vim
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 # pip3
 cd /tmp
 wget https://bootstrap.pypa.io/get-pip.py
 sudo -H python3 get-pip.py
+
+python3 -m pip install --user --upgrade pynvim
 
 # oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
