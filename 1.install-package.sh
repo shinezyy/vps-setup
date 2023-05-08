@@ -7,6 +7,7 @@ sudo apt install unattended-upgrades -y
 sudo apt install python3-distutils -y
 sudo apt install libsodium23 -y
 sudo apt install libsodium18 -y
+sudo apt install python-is-python3 -y
 
 sudo locale-gen zh_CN.UTF-8
 sudo update-locale
