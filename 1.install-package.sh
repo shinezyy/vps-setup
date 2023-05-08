@@ -3,7 +3,7 @@ sudo apt install zsh vim tmux curl wget git python3 tree htop putty-tools sudo \
     nethogs ufw unzip net-tools jnettop neovim -y
 
 sudo apt install landscape-common -y
-sudo apt install unattended-upgrades
+sudo apt install unattended-upgrades -y
 sudo apt install python3-distutils -y
 sudo apt install libsodium23 -y
 sudo apt install libsodium18 -y
