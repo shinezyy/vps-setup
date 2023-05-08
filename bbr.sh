@@ -4,7 +4,7 @@ echo $version
 
 uname -r
 cat /etc/lsb-release
-sudo apt install --install-recommends linux-generic-hwe-${version}
+# sudo apt install --install-recommends linux-generic-hwe-${version}
 sleep 3
 sysctl net.ipv4.tcp_available_congestion_control
 sleep 3
