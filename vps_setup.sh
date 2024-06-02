@@ -35,9 +35,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # pip3
-cd /tmp
-wget https://bootstrap.pypa.io/get-pip.py
-sudo -H python3 get-pip.py
+sudo apt install python3-pip
 
 python3 -m pip install --user --upgrade pynvim
 

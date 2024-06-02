@@ -8,7 +8,6 @@ sudo apt install landscape-common -y
 sudo apt install unattended-upgrades -y
 
 sudo apt install libsodium23 -y
-sudo apt install libsodium18 -y
 
 sudo locale-gen zh_CN.UTF-8
 sudo update-locale
