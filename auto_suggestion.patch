@@ -1,0 +1,23 @@
+diff --git a/zsh-autosuggestions.zsh b/zsh-autosuggestions.zsh
+index e780225..ebbe7a9 100644
+--- a/zsh-autosuggestions.zsh
++++ b/zsh-autosuggestions.zsh
+@@ -71,9 +71,7 @@ typeset -g ZSH_AUTOSUGGEST_ORIGINAL_WIDGET_PREFIX=autosuggest-orig-
+ (( ! ${+ZSH_AUTOSUGGEST_ACCEPT_WIDGETS} )) && {
+ 	typeset -ga ZSH_AUTOSUGGEST_ACCEPT_WIDGETS
+ 	ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=(
+-		forward-char
+ 		end-of-line
+-		vi-forward-char
+ 		vi-end-of-line
+ 		vi-add-eol
+ 	)
+@@ -90,6 +88,8 @@ typeset -g ZSH_AUTOSUGGEST_ORIGINAL_WIDGET_PREFIX=autosuggest-orig-
+ (( ! ${+ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS} )) && {
+ 	typeset -ga ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS
+ 	ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS=(
++		forward-char
++		vi-forward-char
+ 		forward-word
+ 		emacs-forward-word
+ 		vi-forward-word
