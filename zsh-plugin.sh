@@ -9,15 +9,14 @@ echo "autoload -U compinit && compinit -u" >> ~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/jeffreytse/zsh-vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-vi-mode
 
-sed -i '/^plugins=/s/\(git\)/\1\n  zsh-autosuggestions\n  zsh-vi-mode/' ~/.zshrc
-
-echo "remember to source ~/.zshrc"
+sed -i '/^plugins=/s/\(git\)/\1\n autojump\n  zsh-autosuggestions\n  zsh-vi-mode/' ~/.zshrc
 
 # use ctrl-f to accept the word
-echo ./ctrl_f_acc_word.zshrc >> ~/.zshrc
+cat ./ctrl_f_acc_word.zshrc >> ~/.zshrc
 
-patch_path=./auto_suggestion.patch
-cd $ZSH_CUSTOM/plugins/zsh-autosuggestions/
+patch_path=$(realpath ./auto_suggestion.patch)
+suggest_plugin_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+cd $suggest_plugin_path
 
 # check whether the patch can be applied
 if git apply --check "$patch_path"; then
@@ -25,3 +24,5 @@ if git apply --check "$patch_path"; then
 else
     echo "Patch cannot be applied"
 fi
+
+echo "remember to source ~/.zshrc"
