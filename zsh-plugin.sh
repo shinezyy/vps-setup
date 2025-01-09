@@ -1,4 +1,4 @@
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR=$(realpath $(dirname "${BASH_SOURCE[0]}"))
 
 cd ~/projects
 git clone https://github.com/wting/autojump.git
@@ -13,20 +13,6 @@ git clone https://github.com/jeffreytse/zsh-vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/c
 
 sed -i '/^plugins=/s/\(git\)/\1\n autojump\n  zsh-autosuggestions\n  zsh-vi-mode/' ~/.zshrc
 
-# use ctrl-f to accept the word
-cat ./ctrl_f_acc_word.zshrc >> ~/.zshrc
-
-patch_path=$(realpath ./auto_suggestion.patch)
-suggest_plugin_path=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-cd $suggest_plugin_path
-
-# check whether the patch can be applied
-if git apply --check "$patch_path"; then
-    git apply "$patch_path"
-else
-    echo "Patch cannot be applied"
-fi
-
 # Add ctrl-f binding using absolute path
 CTRL_F_FILE="${SCRIPT_DIR}/ctrl_f_acc_word.zshrc"
 if [[ -f "$CTRL_F_FILE" ]]; then
@@ -37,7 +23,7 @@ fi
 
 # Apply patch using absolute path
 PATCH_FILE="${SCRIPT_DIR}/auto_suggestion.patch"
-SUGGEST_PLUGIN_PATH="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+SUGGEST_PLUGIN_PATH="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
 cd "$SUGGEST_PLUGIN_PATH" || { echo "Failed to cd to zsh-autosuggestions plugin dir"; exit 1; }
 
 if [[ -f "$PATCH_FILE" ]]; then
