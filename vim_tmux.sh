@@ -6,6 +6,9 @@ git clone https://github.com/shinezyy/my_vim_conf.git
 export vimConf=$HOME/projects/my_vim_conf
 cd $vimConf
 
+# vim plugin manager
+git submodule update --init vim/bundle/Vundle.vim
+
 # tmux
 git submodule update --init tmux
 cd ~
@@ -34,4 +37,6 @@ mv ./lua/config ./lua/config_bak
 ln -sf $vimConf/neovim/config ./lua/config
 mv ./lua/plugins ./lua/plugins_bak
 ln -sf $vimConf/neovim/plugins ./lua/plugins
+
+'require("config.lazy")' > ~/.config/nvim/init.lua
 

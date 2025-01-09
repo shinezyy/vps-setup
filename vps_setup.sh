@@ -3,7 +3,7 @@ mkdir -p ~/.ssh/
 touch ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 
-bash ./vim_tmux_setup.sh
+bash ./vim_tmux.sh
 
 # pip3
 sudo apt install python3-pip
