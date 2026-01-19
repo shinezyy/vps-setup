@@ -5,6 +5,7 @@ cd ~/projects
 git clone https://github.com/shinezyy/my_vim_conf.git
 export vimConf=$HOME/projects/my_vim_conf
 cd $vimConf
+./neovim/install_dep.sh
 
 # vim plugin manager
 git submodule update --init vim/bundle/Vundle.vim
